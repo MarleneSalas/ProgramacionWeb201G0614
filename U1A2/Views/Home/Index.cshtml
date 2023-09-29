@@ -1,0 +1,29 @@
+﻿@model U1A2.Models.ViewModels.ConversionViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 1. Actividad 2</title>
+    <link href="~/estilo.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+    <main>
+        <h3>Conversión de moneda</h3>
+        <form action="~/Home/Index" method="post">
+            <label>Importe:</label><br>
+            <input type="number" step="0.01" value="@Model.Importe" name="Importe"><br><br>
+
+            <label>Cambiar a:</label><br>
+            <input type="radio" name="Moneda" id="dolar" value="USD"><label for="dolar">USD</label><br>
+            <input type="radio" name="Moneda" id="peso" value="MXN"><label for="peso">MXN</label><br><br>
+
+            <input type="submit" value="Convertir"><br><br>
+
+            <label>El total es: @Model.Total.ToString("$ 0.00") @Model.Tipo</label>
+
+        </form>
+    </main>
+</body>
+</html>
