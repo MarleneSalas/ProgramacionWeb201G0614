@@ -1,0 +1,121 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    
+}
+
+a:hover{
+    color: rgb(94, 94, 146); 
+}
+
+.barra {
+    font-size: 15px;
+    height: 5%;
+    background-color: rgb(221, 221, 240);
+    display: grid;
+    grid-template-columns: 60% 35% 5%;
+    grid-template-areas: "vacio lista imagen"; 
+}
+
+.barra #lst { 
+    grid-area: lista;
+    list-style: none;
+    margin-right: 15px;
+    text-align: right;
+    }
+
+.barra #img{
+    align-self: center;
+    grid-area: imagen;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.principal {
+    margin-top: 3%;
+    margin-left: calc(50% - 25%);
+    width: 50%;
+    background-color: rgb(236, 236, 236);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 35% 65%;
+}
+
+.principal img{
+    border-radius: 10px 0px 0px 10px;
+}
+
+.principal section{
+    margin: 10px 0px 0px 15px;
+}
+
+#sub{
+    font-size: 15px;
+    color: rgb(136, 136, 136);
+}
+
+h1{
+    color: rgb(66, 66, 141);
+    text-align: center;
+}
+
+.divperfil { 
+    margin-top: 3%;
+    margin-left: calc(50% - 25%);
+    width: 50%;
+    background-color: rgb(241, 241, 241);
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-areas: "nombre"
+                        "infog";
+}
+
+.divperfil #nombre{
+    grid-area: nombre;
+    background-color: rgb(221, 221, 240);
+    display: grid;
+    border-radius: 10px 10px 0px 0px;
+    grid-template-columns: 30% 70%;
+    grid-template-areas: "imagen infoperfil";
+    padding: 20px;
+    vertical-align: middle;
+}
+
+.divperfil #nombre img{
+    grid-area: imagen;
+    border-radius: 170px;
+    height: 150px;
+    align-self: center;
+}
+
+.divperfil #nombre section{
+    grid-area: infoperfil;
+    margin-top: calc(25% - 15%);
+}
+
+.divperfil #nombre section h3{
+    margin: 0px 0px 5px 0px;
+}
+
+.divperfil #nombre section label{
+    font-size: medium;
+}
+
+.divperfil #general{
+    grid-area: infog;
+    padding: 20px;
+}
+
+.divperfil #general #inf{
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(66, 66, 141);
+    display: block;
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 1.5px rgb(66, 66, 141) solid;
+}
