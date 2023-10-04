@@ -1,0 +1,20 @@
+﻿@model U2A1.Models.ViewModels.EspeciesDetallesViewModel
+@{
+    Layout = "Layout";
+}
+
+<div class="especieficha1">
+    <img src="~/especies/@(Model.Id).jpg" />
+    <div>
+        <h1>Castor</h1>
+        <p><label>Clase:</label><a href="~/Home/especies/@Model.Clase.Replace(" ","-")">@Model.Clase</a></p>
+        <p><label>Peso:</label>@Model.Peso kg</p>
+        <p><label>Tamaño:</label>@Model.Tamaño cm</p>
+        <p><label>Habitat:</label>@Model.Habitat</p>
+        <p><label>Descripción:</label></p>
+        <p>@Model.Observaciones</p>
+    </div>
+
+    <a href="~/Home/especies/@Model.Clase.Replace(" ","-")">Regresar</a>
+</div>
+
