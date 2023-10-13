@@ -1,0 +1,35 @@
+﻿@model IEnumerable<U2A2.Models.ViewModels.RazaPaisViewModel>
+
+@{
+	Layout = "MainLayout";
+}
+
+<section class="nav">
+	<h3>Razas por país</h3>
+	<nav>
+		<a href="~/">Listado Alfabético de Razas</a>
+	</nav>
+</section>
+
+<section class="list">
+
+	@foreach (var p in Model)
+	{
+		<h4>@p.Nombre</h4>
+		<ul>
+			@foreach (var r in p.Razas)
+			{
+				<li>
+					<a href="~/Detalles-Raza/@r.Nombre.Replace(" ","-")">
+						<img src="~/imgs_perros/@(r.IdRaza)_0.jpg" />
+						@r.Nombre
+					</a>
+				</li>
+			}
+
+		</ul>
+	}
+</section>
+
+
+
