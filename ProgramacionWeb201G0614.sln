@@ -9,10 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "U1A2", "U1A2\U1A2.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "U2A1", "U2A1\U2A1.csproj", "{D35EEC22-47FF-4C84-8517-8DFBD803A510}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "U2A2", "U2A2\U2A2.csproj", "{4320EB1E-B2EF-4A78-88C0-902EC55A263C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "U5Final", "U5Final\U5Final.csproj", "{50AB194D-FAFF-4F21-A53C-007547DFE71B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
