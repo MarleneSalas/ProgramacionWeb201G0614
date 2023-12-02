@@ -1,0 +1,70 @@
+﻿@model U3A1.Areas.Admin.Models.AdminAgregarViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<form method="post" action="~/Admin/Menu/Agregar" enctype="multipart/form-data">
+    <h1>Agregar hamburguesa al menú</h1>
+    <span>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required asp-for="MenuN.Nombre">
+    </span>
+
+    <span>
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" min="0" step="0.01" required asp-for="MenuN.Precio">
+    </span>
+
+    <span>
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" required asp-for="MenuN.Descripción"></textarea>
+    </span>
+
+    <span>
+        <label for="clasificacion">Clasificación:</label>
+        <select id="clasificacion" required asp-for="MenuN.IdClasificacion" 
+        asp-items="@(new SelectList(Model.Clasificaciones, "Id", "Nombre"))">
+        </select>
+    </span>
+
+    <span>
+        <label for="imagen">Imagen:</label>
+        <input type="file" id="imagen" accept="image/png" onchange="previewImagen()" asp-for="Archivo">
+        <img id="imagen-preview" src="~/images/burger.png">
+    </span>
+    <span class="error">@Html.ValidationSummary(true)</span>
+
+    <div class="botones">
+        <input type="submit" value="Agregar" />
+        <a href="~/Admin/Menu">
+            <input type="button" value="Cancelar" />
+        </a>
+    </div>
+</form>
+
+<script>
+
+    function previewImagen() {
+        const inputImagen = document.getElementById('imagen');
+        const imagenPreview = document.getElementById('imagen-preview');
+
+        const archivoImagen = inputImagen.files[0];
+
+        if (archivoImagen) {
+            const lector = new FileReader();
+
+            lector.onload = function (e) {
+                imagenPreview.src = e.target.result;
+                imagenPreview.style.display = 'block';
+            };
+
+            lector.readAsDataURL(archivoImagen);
+        } else {
+            imagenPreview.src = '#';
+            imagenPreview.style.display = 'none';
+        }
+    }
+</script>
+
+

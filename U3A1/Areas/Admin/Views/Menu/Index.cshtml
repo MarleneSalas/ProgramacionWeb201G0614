@@ -1,0 +1,49 @@
+﻿@model  IEnumerable<U3A1.Areas.Admin.Models.AdminMenuViewModel>
+@{
+	Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<section class="menu2">
+
+	@foreach (var c in Model)
+	{
+		<h1>@c.Nombre</h1>
+
+		@foreach (var m in c.Menus)
+		{
+			<div>
+				<img src="~/hamburguesas/@(m.IdMenu).png" />
+				<h1>@m.Nombre</h1>
+				@if (m.PrecioPromocion == 0)
+				{
+					<h2>@m.Precio.ToString("c")</h2>
+				}
+				else
+				{
+					<h2><del>@m.Precio.ToString("c")</del><br />$@m.PrecioPromocion</h2>
+				}
+
+
+				<p>
+					@m.Descripcion
+				</p>
+
+				<span class="acciones">
+					<a href="~/Admin/Menu/Editar/@m.IdMenu">Editar</a>
+					<a href="~/Admin/Menu/Eliminar/@m.IdMenu">Eliminar</a>
+					@if (m.PrecioPromocion == 0)
+					{
+						<a href="~/Admin/Menu/AgregarPromocion/@m.IdMenu">Agregar promoción</a>
+					}
+					else
+					{
+						<a href="~/Admin/Menu/QuitarPromocion/@m.IdMenu">Quitar promoción</a>
+					}
+				</span>
+			</div>
+		}
+	}
+	<a class="fab" href="~/Admin/Menu/Agregar">+</a>
+</section>
+
+
